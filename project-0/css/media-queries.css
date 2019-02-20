@@ -14,9 +14,7 @@
 /* Tablet Layout | 768-991*/
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    .caption h1 {
-        font-size: 35px;
-    }
+
     .navbar-nav li a {
         padding: 15px 10px;
         letter-spacing: 1px;
@@ -28,9 +26,7 @@
     .resume-area {
         margin-top: 20px;
     }
-    .skills {
-        margin-top: 40px;
-    }/
+
 
 
 /* Mobile Layout | 481 - 767*/
@@ -112,9 +108,6 @@
     .resume-area {
         margin-top: 20px;
     }
-    .skills {
-        margin-top: 40px;
-    }
 
 
     .about-text h2,
@@ -122,11 +115,6 @@
     .testimonial-item h2,
     .follow-me h2 {
         font-size: 22px;
-    }
-
-    .filters li {
-        margin: 0px 10px;
-        letter-spacing: 1px;
     }
 
     .single-testimonial {
