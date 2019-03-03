@@ -127,6 +127,8 @@ input[type="submit"]:hover {
   font-size: 30px;
   font-weight: 400;
   /* color: #fff; */
+  /* left: -110%; */
+  display: none;
   margin-bottom: 25px;
   line-height: 35px;
   position: relative;
@@ -146,6 +148,7 @@ input[type="submit"]:hover {
 
 .section-title p {
   /* color: white; */
+  display: none;
   margin-top: 25px;
   font-size: 150%;
 }
@@ -369,8 +372,23 @@ h3.subtitle:before {
 /* ----------------------------------------------------------------------------------------
 *                                Positive Thoughts/Quotes area css
 * --------------------------------------------------------------------------------------- */
+/* EINSTEIN ANIMATION */
+#einstein {
+  position: absolute;
+  z-index: 1;
+  margin-top: -10%;
+  margin-left: -25%;
+  overflow: hidden;
+  left: -200px;
+  height: 200px;
+}
+/* END OF EINSTEIN ANIMATION */
 .testimonial-area {
   background: #fff;
+}
+
+#tesimonialSection {
+  margin-top: 5%;
 }
 
 .single-testimonial {

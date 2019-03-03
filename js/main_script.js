@@ -5,56 +5,81 @@
 ~ Last Modified : Feb 19 2019
 -------------------------------------------------------------------------------------- */
 
-$(document).ready(function () {
+$(document).ready(function() {
+  /*  -------------------------------------------------------------------------  *
+   *                       change Menu background on scroll down                 *
+   *  -------------------------------------------------------------------------  */
+  //www.w3schools.com/howto/howto_js_navbar_sticky.asp
 
-        /*  -------------------------------------------------------------------------  *
-         *                       change Menu background on scroll down                 *
-         *  -------------------------------------------------------------------------  */
-          //www.w3schools.com/howto/howto_js_navbar_sticky.asp
+  $(window).on("scroll", function() {
+    var menu_area = $(".menu-area");
+    if ($(window).scrollTop() > 200) {
+      menu_area.addClass("sticky-menu");
+    } else {
+      menu_area.removeClass("sticky-menu");
+    }
+  });
 
-          $(window).on('scroll', function () {
-              var menu_area = $('.menu-area');
-              if ($(window).scrollTop() > 200) {
-                  menu_area.addClass('sticky-menu');
-              } else {
-                  menu_area.removeClass('sticky-menu');
-              }
-          });
+  /*  -------------------------------------------------------------------------  *
+   *                       Navigation js                                         *
+   *  -------------------------------------------------------------------------  */
+  //www.w3schools.com/bootstrap/bootstrap_navbar.asp
+  //www.w3schools.com/jsref/prop_element_scrolltop.asp
+  $(document).on("click", ".navbar-collapse.in", function(e) {
+    if ($(e.target).is("a") && $(e.target).attr("class") != "dropdown-toggle") {
+      $(this).collapse("hide");
+    }
+  });
 
+  //www.w3schools.com/bootstrap/bootstrap_ref_js_scrollspy.asp
+  $("body").scrollspy({
+    target: ".navbar-collapse",
+    offset: 195
+  });
 
-        /*  -------------------------------------------------------------------------  *
-         *                       Navigation js                                         *
-         *  -------------------------------------------------------------------------  */
-          //www.w3schools.com/bootstrap/bootstrap_navbar.asp
-          //www.w3schools.com/jsref/prop_element_scrolltop.asp
-          $(document).on('click', '.navbar-collapse.in', function (e) {
-              if ($(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle') {
-                  $(this).collapse('hide');
-              }
-          });
+  /*  -------------------------------------------------------------------------  *
+   *                   Testimonial js using owl carousel package                 *
+   *  -------------------------------------------------------------------------  */
+  //www.jqueryscript.net/demo/Powerful-Customizable-jQuery-Carousel-Slider-OWL-Carousel/
+  $(".testimonial-list").owlCarousel({
+    items: 2,
+    autoPlay: true,
+    navigation: true,
+    itemsDesktop: [1199, 2],
+    itemsDesktopSmall: [980, 1],
+    itemsTablet: [768, 1],
+    itemsTabletSmall: false,
+    itemsMobile: [479, 1],
+    pagination: false,
+    autoHeight: true,
+    navigationText: [
+      '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+      '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+    ]
+  });
 
-          //www.w3schools.com/bootstrap/bootstrap_ref_js_scrollspy.asp
-          $('body').scrollspy({
-              target: '.navbar-collapse',
-              offset: 195
-          });
+  /*  -------------------------------------------------------------------------  *
+   *                   Einstein strolling across screen animation                 *
+   *  -------------------------------------------------------------------------  */
 
-        /*  -------------------------------------------------------------------------  *
-         *                   Testimonial js using owl carousel package                 *
-         *  -------------------------------------------------------------------------  */
-          //www.jqueryscript.net/demo/Powerful-Customizable-jQuery-Carousel-Slider-OWL-Carousel/
-          $(".testimonial-list").owlCarousel({
-              items: 2,
-              autoPlay: true,
-              navigation: true,
-              itemsDesktop: [1199, 2],
-              itemsDesktopSmall: [980, 1],
-              itemsTablet: [768, 1],
-              itemsTabletSmall: false,
-              itemsMobile: [479, 1],
-              pagination: false,
-              autoHeight: true,
-              navigationText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>']
-          });
-
-    }); //Conclusion document.ready
+  $(document).ready(function() {
+    $(window).on("scroll", function() {
+      var einstein = $("#einstein");
+      if ($(window).scrollTop() > 600) {
+        //TESTIMONIAL H2 TITLE - HAPPY THOUGHTS
+        $(".section-title > h2").fadeIn(19500);
+        //EINSTEIN QUOTE ANIMATION
+        $(".section-title > p")
+          .delay(2020)
+          .fadeIn(3550);
+        //EINSTEIN IMAGE
+        $(einstein).animate(
+          {
+            left: "100%"
+          },
+          4000
+        );
+      }
+    });
+  });
+}); //Conclusion document.ready
