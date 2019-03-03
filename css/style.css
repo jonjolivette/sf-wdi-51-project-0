@@ -436,7 +436,7 @@ h3.subtitle:before {
 *                                   Contact area css
 * --------------------------------------------------------------------------------------- */
 #contact {
-  background-image: url("/Users/johnhenry/Desktop/sf-wdi-51-project-0/img/footer/team.jpg");
+  background-image: url("../img/footer/team.jpg");
   background-position: center center;
   color: #f8f8f8;
   font-size: 14px;
