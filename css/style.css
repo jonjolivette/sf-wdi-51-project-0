@@ -450,6 +450,14 @@ h3.subtitle:before {
   padding: 5px;
 }
 
+#confucius {
+  height: 140px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+}
+
 /* ----------------------------------------------------------------------------------------
 *                                   Contact area css
 * --------------------------------------------------------------------------------------- */
